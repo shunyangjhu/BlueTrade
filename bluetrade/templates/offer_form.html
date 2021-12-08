@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Offer Commodity</title>
+</head>
+<body>
+    <form action="/api/offer/" method="post">
+        {% csrf_token %}
+        <input type="number" name="bidPrice">
+        <input type="text" name="content">
+        <select id="sender" name="sender">
+            {% for us in userIDs %}
+            <option value="{{ us }}">{{ us }}</option>
+            {% endfor %}
+        </select>
+        <select id="commodity" name="commodity">
+            {% for comm in commodityIDs %}
+            <option value="{{ comm }}">{{ comm }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Post">
+    </form>
+</body>
+</html>

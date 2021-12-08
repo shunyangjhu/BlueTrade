@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>self define image upload</title>
+</head>
+<body>
+
+	<form method='post' enctype="multipart/form-data" action="/api/post_image/">
+		{% csrf_token %}
+		<input type="file" name="file"><br/>
+		<input type="submit" value="upload">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Update Commodity</title>
+</head>
+<body>
+    <form action="/api/update/" method="post">
+        {% csrf_token %}
+        <input id="id" type="hidden" name="id" value={{id}}>
+        <input id="name" type="text" name="name">
+        <select id="type" name="type">
+            {% for tp in typenames %}
+            <option value="{{ tp }}">{{ tp }}</option>
+            {% endfor %}
+        </select>
+        <input id="description"  type="text" name="description">
+        <input id="price" type="number" name="price">
+        <input id="category" type="text" name="category">
+        <input id="numofstock" type="number" name="numofstock">
+        <select id="onsale" name="onsale">
+          <option value="True">True</option>
+          <option value="False">False</option>
+        </select>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
